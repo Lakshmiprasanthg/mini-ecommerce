@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini E-Commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header with Logo & Cart -->
+  <header>
+    <div class="logo">MiniStore</div>
+    <div class="cart" onclick="openCart()">
+      🛒 <span id="cart-count">0</span>
+    </div>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+
+  </header>
+
+  <!-- Search Bar -->
+  <section class="search-bar">
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search products..." 
+      oninput="searchProducts()"
+    >
+  </section>
+
+  <!-- Category Filters -->
+  <section class="filters">
+    <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+    <button class="filter-btn" onclick="filterProducts('men')">Men</button>
+    <button class="filter-btn" onclick="filterProducts('women')">Women</button>
+    <button class="filter-btn" onclick="filterProducts('shoes')">Shoes</button>
+  </section>
+
+  <!-- Product Grid -->
+  <main class="product-grid">
+    <div class="product-card" data-category="men">
+      <img src="images/goku.jpg" alt="Goku T-Shirt">
+      <h3>Men's T-Shirt</h3>
+      <p>₹499</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product-card" data-category="women">
+      <img src="images/kurti.jpg" alt="Yellow Kurti">
+      <h3>Women's Kurti</h3>
+      <p>₹899</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product-card" data-category="shoes">
+      <img src="images/sneakers.jpg" alt="Unisex Sneakers">
+      <h3>Unisex Sneakers</h3>
+      <p>₹1299</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product-card" data-category="men">
+      <img src="images/jemens.avif" alt="Men's Jeans">
+      <h3>Men's Jeans</h3>
+      <p>₹1199</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+  </main>
+
+  <!-- Cart Modal -->
+  <div class="cart-popup" id="cartPopup">
+    <h3>Your Cart 🛍️</h3>
+    <ul id="cartItems"></ul>
+    <p>Total: ₹<span id="cartTotal">0</span></p>
+    <button onclick="closeCart()">Close</button>
+  </div>
+
+  <!-- Script File -->
+  <script src="script.js"></script>
+
+</body>
+</html>
